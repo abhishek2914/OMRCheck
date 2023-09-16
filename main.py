@@ -28,8 +28,8 @@ while True:
     imgFinal = img.copy()#The line of code imgFinal = img.copy() creates a copy of the original image img and assigns it to a new variable imgFinal.
     imgBiggestcontours = img.copy()#The line of code imgBiggestcontours = img.copy() creates a copy of the original image img and assigns it to a new variable imgBiggestcontours.
     imgGray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)#Converting orignal image to gray scale.This process is termed as Gray scale conversion.
-    imgBlur=cv2.GaussianBlur((imgGray),(5,5),1)#notes
-    imgCanny=cv2.Canny(imgBlur,10,50)#notes
+    imgBlur=cv2.GaussianBlur((imgGray),(5,5),1)#done to ensure:simplicity,dimesnsionality reduction,illumination invariance,noise reduction,compatibility #(5,5) is the size of gaussian kernel i.e. blurring operation will consider a neighbourhood of 5x5 pixels around each pixels # 1 indiscates the standard deviation of gaussian distribution used for blurring operation 
+    imgCanny=cv2.Canny(imgBlur,10,50)#done to ensure edge detection #(10,50) are threshold values. ANy gradient magnitude above or below these threshold values will be considered as non edged or strongly edged pixels.
 
     try:
         #FINDING ALL CONTOURS
